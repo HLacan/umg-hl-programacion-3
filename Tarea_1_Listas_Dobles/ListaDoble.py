@@ -64,9 +64,13 @@ class ListaDoble:
 
     def imprimir(self):
         actual = self.inicio
+        salida = "None"
         while actual:
-            print(f"Nombre: {actual.nombre}, Apellido: {actual.apellido}, Carnet: {actual.carnet}")
+            etiqueta = f"{actual.nombre} {actual.apellido} ({actual.carnet})"
+            salida += f" <- {etiqueta} ->"
             actual = actual.siguiente
+        salida += " None"
+        print(salida)
    
     def generar_grafico(self):
         dot = Digraph(format="png")
